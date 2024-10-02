@@ -1,0 +1,33 @@
+
+"""
+programme fait par : Arthur Wells
+Groupe : 406
+Description : Jeu de devinette
+"""
+
+
+from random import randint
+continuer = 1
+while (continuer == 1):
+    maximum = 100
+    minimum = 0
+    nbr = randint(minimum, maximum)
+    nbr_essais = 0
+    reponse = 0
+    print("Essayer de deviner le nombre que j'ai choisi. C'est entre %d et %d. Bonne chance!" % (minimum, maximum))
+    while (reponse != nbr):
+
+        nbr_essais += 1
+        reponse = int(input("Tentez de devinez\n"))
+        #print(nombre)
+        if reponse > nbr:
+            print("Mauvaise réponse, le nombre est plus petit.")
+        elif nbr > reponse:
+            print("Mauvaise réponse, le nombre est plus grand.")
+        elif nbr == reponse:
+            print("Bravo, %d était la bonne réponse. Vous avez réussi en %d essais" %(reponse, nbr_essais))
+        else:
+            print("Votre nombre n'est pas valide")
+    continuer = int(input("Voulez vous recommencer?\n1. oui\n2. non\n"))
+    if continuer == 2:
+        print("Merci d'avoir jouer!.")
